@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     # external
     "rest_framework",
     # internal
+    "apps.tree",
 ]
 
 MIDDLEWARE = [
