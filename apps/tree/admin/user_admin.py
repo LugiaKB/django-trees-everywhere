@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User as DjangoUser
-from ..models import Account, User
+from ..models import Account, Profile, User
 
 
 class AccountInline(admin.TabularInline):
@@ -9,8 +9,13 @@ class AccountInline(admin.TabularInline):
     extra = 1
 
 
+class ProfileInline(admin.StackedInline):
+    model = Profile
+    can_delete = False
+
+
 class CustomUserAdmin(BaseUserAdmin):
-    inlines = [AccountInline]
+    inlines = [AccountInline, ProfileInline]
     list_display = ("username", "email", "accounts_list")
 
     def accounts_list(self, obj):
