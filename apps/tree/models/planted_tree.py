@@ -23,7 +23,7 @@ class PlantedTree(models.Model):
 
     @property
     def accounts(self):
-        return self.user.accounts.all()
+        return sorted(list(self.user.accounts.values_list("name", flat=True)))
 
     @property
     def location(self):
