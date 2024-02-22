@@ -24,11 +24,11 @@ class LoginView(View):
 
             if user is not None:
                 login(request, user)
-                messages.success(request, "Login bem-sucedido.")
+                messages.success(request, "Login successful.")
                 return redirect("home")  # Redirecione para a página após o login
             else:
-                messages.error(request, "Credenciais inválidas.")
+                messages.error(request, "Invalid credentials.")
         else:
-            messages.error(request, "Por favor, corrija os erros no formulário.")
+            messages.error(request, "Please, correct the errors below.")
 
         return render(request, self.template_name, {"form": form})
