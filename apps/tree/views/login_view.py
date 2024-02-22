@@ -14,7 +14,7 @@ class LoginView(View):
         return render(request, self.template_name, {"form": form})
 
     def post(self, request):
-        form = self.form_class(request.POST)
+        form = self.form_class(data=request.POST)
 
         if form.is_valid():
             username = form.cleaned_data["username"]
@@ -28,5 +28,7 @@ class LoginView(View):
                 return redirect("home")  # Redirecione para a página após o login
             else:
                 messages.error(request, "Credenciais inválidas.")
+        else:
+            messages.error(request, "Por favor, corrija os erros no formulário.")
 
         return render(request, self.template_name, {"form": form})
