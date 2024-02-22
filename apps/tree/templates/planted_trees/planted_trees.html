@@ -3,25 +3,39 @@
 {% block content %}
 
     <h2>Planted Trees</h2>
-    <p>Here is a list of all the trees this user has planted</p>
-
+    {% if account_listing %}
+        <p>Here is a list of all the trees planted by the accounts</p>
+    {% else %}
+        <p>Here is a list of all the trees this user has planted</p>
+    {% endif %}
+    
     <ul>
         {% for planted_tree in planted_trees %}
             <li>
+                {% if not account_listing %}
                 <a href="{% url 'planted-tree' pk=planted_tree.id %}">
-                    {{ planted_tree.tree.name }}
-                    {{ planted_tree.tree.scientific_name }}
-                    {{ planted_tree.planted_at}}
-                    {{ planted_tree.location }}
-                    {{ planted_tree.height }}
+                {% endif %}
                     <ul>
-                        {% for account in planted_tree.accounts %}
-                            <li>
-                                {{ account }}
-                            </li>
-                        {% endfor %}
-                    </ul>
+                    {% if account_listing %}
+                        <li>User: {{ planted_tree.user }}</li>
+                        <li><ul> Account:
+                            {% for account in planted_tree.accounts %}
+                                <li>
+                                    {{ account }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        </li>
+                    {% endif %}
+                    <li>{{ planted_tree.tree.name }}</li>
+                    <li>{{ planted_tree.tree.scientific_name }}</li>
+                    <li>{{ planted_tree.planted_at}}</li>
+                    <li>{{ planted_tree.location }}</li>
+                    <li>{{ planted_tree.height }}</li>
+                </ul>
+                {% if not account_listing %}
                 </a>
+                {% endif %}
             </li>
         {% endfor %}
     </ul>
