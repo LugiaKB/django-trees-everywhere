@@ -1,9 +1,25 @@
+<!-- plant_tree.html -->
+
 {% extends 'home/home.html' %}
-
 {% block content %}
-    <h2>Plant Tree</h2>
-    <form method="post" action="{% url 'plant_tree' %}">
-        {% csrf_token %}    
-        {{ form|crispy }}       
+  <h2>Plant a Tree</h2>
 
+  <form method="post" action="{% url 'plant-tree' %}">
+    {% csrf_token %}
+    
+    <label for="tree_id">Select a Tree:</label>
+    <select name="tree_id" required>
+      {% for tree in available_trees %}
+        <option value="{{ tree.id }}">{{ tree.name }} - {{ tree.scientific_name }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="latitude">Latitude:</label>
+    <input type="number" name="latitude" required>
+
+    <label for="longitude">Longitude:</label>
+    <input type="number" name="longitude" required>
+
+    <button type="submit">Plant Tree</button>
+  </form>
 {% endblock %}

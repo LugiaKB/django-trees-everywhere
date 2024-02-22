@@ -26,12 +26,12 @@ class User(AbstractUser):
     def __str__(self):
         return (f"{self.first_name} {self.last_name}").strip() or self.username
 
-    def plant_tree(self, tree, location):
+    def plant_tree(self, tree_id, location):
         PlantedTree = apps.get_model("tree", "PlantedTree")
 
         return PlantedTree.objects.create(
             user=self,
-            tree=tree,
+            tree_id=tree_id,
             latitude=location[0],
             longitude=location[1],
         )
@@ -42,11 +42,11 @@ class User(AbstractUser):
         planted_trees = [
             PlantedTree(
                 user=self,
-                tree=tree,
+                tree_id=tree_id,
                 latitude=location[0],
                 longitude=location[1],
             )
-            for tree, location, account in plants
+            for tree_id, location, account in plants
         ]
 
         PlantedTree.objects.bulk_create(planted_trees)

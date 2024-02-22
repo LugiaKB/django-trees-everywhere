@@ -6,12 +6,13 @@ from .views import (
     PlantedTreesView,
     PlantedTreeView,
     AccountPlantedTreesView,
+    PlantTreeView,
 )
 
 urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),
-    path("home/", HomeView.as_view(), name="home"),
+    path("", HomeView.as_view(), name="home"),
     path("planted-trees/", PlantedTreesView.as_view(), name="planted-trees"),
     path("planted-trees/<int:pk>/", PlantedTreeView.as_view(), name="planted-tree"),
     path(
@@ -19,4 +20,5 @@ urlpatterns = [
         AccountPlantedTreesView.as_view(),
         name="account-planted-trees",
     ),
+    path("plant-tree/", PlantTreeView.as_view(), name="plant-tree"),
 ]
