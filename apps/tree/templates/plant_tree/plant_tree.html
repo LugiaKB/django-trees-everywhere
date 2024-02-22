@@ -1,0 +1,9 @@
+{% extends 'home/home.html' %}
+
+{% block content %}
+    <h2>Plant Tree</h2>
+    <form method="post" action="{% url 'plant_tree' %}">
+        {% csrf_token %}    
+        {{ form|crispy }}       
+
+{% endblock %}

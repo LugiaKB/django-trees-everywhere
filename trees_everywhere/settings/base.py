@@ -22,6 +22,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # external
     "rest_framework",
+    "crispy_forms",
+    "crispy_bootstrap4",
     # internal
     "apps.tree",
 ]
@@ -92,3 +94,5 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {}
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"

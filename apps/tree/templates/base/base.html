@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>{% block title %}Seu Título Padrão{% endblock %}</title>
+        <!-- Adicione links para seus estilos CSS, bibliotecas JS, etc. aqui -->
+    </head>
+    <body>
+        <!-- Cabeçalho comum -->
+        <header>
+            <h1>Trees Everywhere</h1>
+            {% block header %}{% endblock %}
+        </header>
+
+        <!-- Conteúdo específico da página -->
+        <div id="content">{% block content %}{% endblock %}</div>
+
+        <!-- Rodapé comum -->
+        <footer>
+            <p>&copy; 2024 Trees Everywhere</p>
+        </footer>
+
+        <!-- Adicione scripts JS e outros elementos comuns aqui -->
+    </body>
+</html>

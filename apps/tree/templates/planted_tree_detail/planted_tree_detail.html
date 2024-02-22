@@ -1,0 +1,26 @@
+{% extends 'home/home.html' %}
+
+{% block content %}
+
+div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Planted Tree Detail</h2>
+            <p>Here is the detail of the tree this user has planted</p>
+            <ul>
+                <li>
+                    <a href="{% url 'planted_tree_detail' planted_tree.id %}">
+                        {{ planted_tree.tree.name }}
+                        {{ planted_tree.tree.scientific_name }}
+                        {{ planted_tree.planted_at}}
+                        {{ planted_tree.location }}
+                        {{ planted_tree.age }}
+                        {{ planted_tree.height }}
+                        {{ planted_tree.accounts}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+
+{% block header %}
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'planted_tree_list' %}">Trees</a></li>
+            <li><a href="{% url 'account_planted_trees_list' %}">Accounts Planted Trees</a></li>
+            <li><a href="{% url 'plant_tree' %}">Plant Tree</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+    <h2>Home</h2>
+    <p>Welcome to Trees Everywhere! This is the home page.</p>
+{% endblock %}

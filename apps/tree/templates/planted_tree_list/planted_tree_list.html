@@ -1,0 +1,25 @@
+{% extends 'home/home.html' %}
+
+{% block content %}
+
+    <h2>Planted Trees</h2>
+    <p>Here is a list of all the trees this user has planted</p>
+
+    <ul>
+        {% for planted_tree in planted_trees %}
+            <li>
+                {% comment %} colocar condição para ver se é a listagem da conta ou não, se for, mostrar conta e usuário {% endcomment %}
+                <a href="{% url 'planted_tree_detail' planted_tree.id %}">
+                    {{ planted_tree.tree.name }}
+                    {{ planted_tree.tree.scientific_name }}
+                    {{ planted_tree.planted_at}}
+                    {{ planted_tree.location }}
+                    {{ planted_tree.age }}
+                    {{ planted_tree.height }}
+                    {{ planted_tree.accounts}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
