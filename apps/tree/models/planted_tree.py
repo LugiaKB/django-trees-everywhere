@@ -1,8 +1,10 @@
 from django.db import models
 from django.utils import timezone
 
+
 from .tree import Tree
 from .user import User
+from dateutil.relativedelta import relativedelta
 
 
 class PlantedTree(models.Model):
@@ -19,7 +21,19 @@ class PlantedTree(models.Model):
     @property
     def age(self):
         now = timezone.now()
-        return (now - self.planted_at).years
+        difference = relativedelta(now, self.planted_at)
+
+        years = difference.years
+        months = difference.months
+        days = difference.days
+
+        age_dict = {
+            "years": years,
+            "months": months,
+            "days": days,
+        }
+
+        return age_dict
 
     @property
     def accounts(self):

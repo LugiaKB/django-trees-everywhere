@@ -2,19 +2,19 @@
 
 {% block content %}
 
-div class="container">
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <h2>Planted Tree Detail</h2>
             <p>Here is the detail of the tree this user has planted</p>
             <ul>
                 <li>
-                    <a href="{% url 'planted_tree_detail' planted_tree.id %}">
+                    <a href="{% url 'planted-tree' pk=planted_tree.id %}">
                         {{ planted_tree.tree.name }}
                         {{ planted_tree.tree.scientific_name }}
                         {{ planted_tree.planted_at}}
                         {{ planted_tree.location }}
-                        {{ planted_tree.age }}
+                        {{ planted_tree.age.years }}
                         {{ planted_tree.height }}
                         {{ planted_tree.accounts}}
                     </a>

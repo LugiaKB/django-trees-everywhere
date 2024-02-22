@@ -8,20 +8,17 @@
     <ul>
         {% for planted_tree in planted_trees %}
             <li>
-                {% comment %} colocar condição para ver se é a listagem da conta ou não, se for, mostrar conta e usuário {% endcomment %}
-                {% comment %} {% url 'planted_tree_detail' planted_tree.id %} {% endcomment %}
-                <a href="#">
+                <a href="{% url 'planted-tree' pk=planted_tree.id %}">
                     {{ planted_tree.tree.name }}
                     {{ planted_tree.tree.scientific_name }}
                     {{ planted_tree.planted_at}}
                     {{ planted_tree.location }}
-                    {% comment %} {{ planted_tree.age }} {% endcomment %}
                     {{ planted_tree.height }}
                     <ul>
                         {% for account in planted_tree.accounts %}
-                        <li>
-                            {{ account}}
-                        </li>
+                            <li>
+                                {{ account }}
+                            </li>
                         {% endfor %}
                     </ul>
                 </a>
