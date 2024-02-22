@@ -10,7 +10,7 @@ class PlantedTree(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="planted_trees"
     )
-    tree = models.OneToOneField(
+    tree = models.ForeignKey(
         Tree, on_delete=models.CASCADE, related_name="planted_trees"
     )
     latitude = models.DecimalField(max_digits=9, decimal_places=6, default=0.0)
@@ -23,7 +23,7 @@ class PlantedTree(models.Model):
 
     @property
     def accounts(self):
-        return sorted(list(self.user.accounts.values_list("name", flat=True)))
+        return sorted(self.user.accounts.all(), key=lambda account: account.name)
 
     @property
     def location(self):

@@ -1,8 +1,28 @@
-from django.contrib.auth.models import User
 from django.apps import apps
+from django.contrib.auth.models import AbstractUser, Group, Permission
+from django.db import models
 
 
-class User(User):
+class User(AbstractUser):
+    groups = models.ManyToManyField(
+        Group,
+        verbose_name=("groups"),
+        blank=True,
+        help_text=(
+            "The groups this user belongs to. A user will get all permissions "
+            "granted to each of their groups."
+        ),
+        related_name="tree_user_groups",  # Adicione esta linha
+    )
+
+    user_permissions = models.ManyToManyField(
+        Permission,
+        verbose_name=("user permissions"),
+        blank=True,
+        help_text=("Specific permissions for this user."),
+        related_name="tree_user_permissions",  # Adicione esta linha
+    )
+
     def __str__(self):
         return (f"{self.first_name} {self.last_name}").strip() or self.username
 
@@ -12,7 +32,7 @@ class User(User):
         return PlantedTree.objects.create(
             user=self,
             tree=tree,
-            lagitude=location[0],
+            latitude=location[0],
             longitude=location[1],
         )
 
@@ -23,7 +43,7 @@ class User(User):
             PlantedTree(
                 user=self,
                 tree=tree,
-                lagitude=location[0],
+                latitude=location[0],
                 longitude=location[1],
             )
             for tree, location, account in plants
@@ -35,4 +55,3 @@ class User(User):
 
     class Meta:
         app_label = "tree"
-        proxy = True

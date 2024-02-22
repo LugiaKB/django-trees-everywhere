@@ -1,0 +1,43 @@
+[
+    {
+      "model": "tree.tree",
+      "pk": 1,
+      "fields": {
+        "name": "Bordo-comum",
+        "scientific_name": "Acer platanoides"
+      }
+    },
+    {
+      "model": "tree.tree",
+      "pk": 2,
+      "fields": {
+        "name": "Carvalho-americano",
+        "scientific_name": "Quercus alba"
+      }
+    },
+    {
+      "model": "tree.tree",
+      "pk": 3,
+      "fields": {
+        "name": "Cedro-vermelho-do-leste",
+        "scientific_name": "Thuja plicata"
+      }
+    },
+    {
+      "model": "tree.tree",
+      "pk": 4,
+      "fields": {
+        "name": "Cerejeira-do-japão",
+        "scientific_name": "Prunus serrulata"
+      }
+    },
+    {
+      "model": "tree.tree",
+      "pk": 5,
+      "fields": {
+        "name": "Choupo-branco",
+        "scientific_name": "Populus alba"
+      }
+    }
+  ]
+  

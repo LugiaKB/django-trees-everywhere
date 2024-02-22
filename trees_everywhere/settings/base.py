@@ -98,3 +98,5 @@ REST_FRAMEWORK = {}
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 LOGIN_URL = "login"
+
+AUTH_USER_MODEL = "tree.User"

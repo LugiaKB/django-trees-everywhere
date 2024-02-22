@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from django.contrib.auth.models import User as DjangoUser
 from ..models import Account, Profile, User
 
 
@@ -22,5 +21,5 @@ class CustomUserAdmin(BaseUserAdmin):
         return ", ".join([account.name for account in obj.accounts.all()])
 
 
-admin.site.unregister(DjangoUser)
+# admin.site.unregister(DjangoUser)
 admin.site.register(User, CustomUserAdmin)
