@@ -9,4 +9,9 @@ class HomeView(View):
 
     @method_decorator(login_required)
     def get(self, request):
-        return render(request, self.template_name)
+        context = {
+            "username": request.user.username,
+            "about": request.user.profile.about,
+        }
+
+        return render(request, self.template_name, context)

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,23 +13,27 @@
             content="width=device-width, initial-scale=1.0"
         />
         <title>{% block title %}Seu Título Padrão{% endblock %}</title>
-        <!-- Adicione links para seus estilos CSS, bibliotecas JS, etc. aqui -->
+        
+        <link rel="stylesheet" href="{% static '../static/styles.css' %}">
     </head>
     <body>
-        <!-- Cabeçalho comum -->
         <header>
-            <h1>Trees Everywhere</h1>
+            <div class="menu-title">
+                <a href="{% url 'home' %}">
+                    {% comment %} <h1>
+                        Trees Everywhere
+                    </h1> {% endcomment %}
+                    <img src="{% static '../static/logo.png' %}" alt="Trees Everywhere" />
+                </a>    
+            </div>
             {% block header %}{% endblock %}
         </header>
 
-        <!-- Conteúdo específico da página -->
-        <div id="content">{% block content %}{% endblock %}</div>
+        <div class="content">{% block content %}{% endblock %}</div>
 
-        <!-- Rodapé comum -->
         <footer>
             <p>&copy; 2024 Trees Everywhere</p>
         </footer>
 
-        <!-- Adicione scripts JS e outros elementos comuns aqui -->
     </body>
 </html>
