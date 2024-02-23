@@ -1,4 +1,5 @@
-from django.urls import path
+from django.urls import path, include
+
 from .views import (
     LoginView,
     LogoutView,
@@ -8,8 +9,10 @@ from .views import (
     AccountPlantedTreesView,
     PlantTreeView,
 )
+from .api_urls import api_urls
 
 urlpatterns = [
+    path("api/", include(api_urls)),
     path("login/", LoginView.as_view(), name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),
     path("", HomeView.as_view(), name="home"),
@@ -20,5 +23,5 @@ urlpatterns = [
         AccountPlantedTreesView.as_view(),
         name="account-planted-trees",
     ),
-    path("plant-tree/", PlantTreeView.as_view(), name="plant-tree"),
+    path("planted-trees/add", PlantTreeView.as_view(), name="plant-tree"),
 ]
