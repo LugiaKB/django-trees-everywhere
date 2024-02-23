@@ -1,4 +1,4 @@
-![image](https://github.com/LugiaKB/django-trees-everywhere/assets/67010253/866adc08-53d7-48bd-b299-49f578d52703)# django-trees-everywhere
+# django-trees-everywhere
 This project was created with Django 5.0.2.
 
 ## Create a virtual environment
