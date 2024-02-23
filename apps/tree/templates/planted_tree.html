@@ -2,25 +2,28 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Planted Tree Detail</h2>
-            <p>Here is the detail of the tree this user has planted</p>
-            <ul>
-                <li>
-                    <a href="{% url 'planted-tree' pk=planted_tree.id %}">
-                        {{ planted_tree.tree.name }}
-                        {{ planted_tree.tree.scientific_name }}
-                        {{ planted_tree.planted_at}}
-                        {{ planted_tree.location }}
-                        {{ planted_tree.age.years }}
-                        {{ planted_tree.height }}
-                        {{ planted_tree.accounts}}
-                    </a>
-                </li>
-            </ul>
-        </div>
+<div class="planted_tree_detail">
+    <div class="planted_tree_detail_image">
+        <p>{{ planted_tree.tree.name }} - <i>{{ planted_tree.tree.scientific_name }}</i></p>
+        <img src="{{ planted_tree.tree.image_source }}" alt="{{ planted_tree.tree.name }}" />
     </div>
+    <div class="planted_tree_detail_info">
+        <p><strong>Name:</strong> {{ planted_tree.tree.name }}</p>
+        <p><strong>Scientific Name:</strong> {{ planted_tree.tree.scientific_name }}</p>
+        <p><strong>Age:</strong> {{ planted_tree.age.years }} years, {{ planted_tree.age.months }} months and {{ planted_tree.age.days }} days old. </p>
+        <p><strong>Planting date:</strong> {{ planted_tree.planted_at }}</p>
+        <p><strong>Location:</strong> ({{ planted_tree.latitude }}, {{ planted_tree.longitude }})</p>
+        <p><strong>Accounts:</strong>
+            {% for account in planted_tree.accounts %}
+                {{ account.name }}{% if not forloop.last %},{% endif %}
+            {% endfor %}.
+        </p>
+
+
+
+        
+    </div>
+</div>
+    
 
 {% endblock %}

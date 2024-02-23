@@ -12,7 +12,7 @@ class User(AbstractUser):
             "The groups this user belongs to. A user will get all permissions "
             "granted to each of their groups."
         ),
-        related_name="tree_user_groups",  # Adicione esta linha
+        related_name="tree_user_groups",
     )
 
     user_permissions = models.ManyToManyField(
@@ -20,7 +20,7 @@ class User(AbstractUser):
         verbose_name=("user permissions"),
         blank=True,
         help_text=("Specific permissions for this user."),
-        related_name="tree_user_permissions",  # Adicione esta linha
+        related_name="tree_user_permissions",
     )
 
     def __str__(self):

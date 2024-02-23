@@ -101,9 +101,35 @@ body {
 .profile_username, .profile_about {
     display: flex;
     justify-content: center;
+    
 }
 
 .profile_about {
     margin-top: 10px;
     color:rgb(70, 75, 69)
+}
+
+.planted_tree_detail {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 900px;
+    height: auto;
+}
+
+.planted_tree_detail_image, .planted_tree_detail_info {
+    width: 50%;
+    height: 400px;
+}
+
+.planted_tree_detail_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.planted_tree_detail_image > img {
+    width: 80%;
+    height: 400px;
 }

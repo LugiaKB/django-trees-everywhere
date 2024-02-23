@@ -23,9 +23,9 @@ class PlantedTree(models.Model):
         now = timezone.now()
         difference = relativedelta(now, self.planted_at)
 
-        years = difference.years
-        months = difference.months
-        days = difference.days
+        years = difference.days // 365
+        months = (difference.days % 365) // 30
+        days = (difference.days % 365) % 30
 
         age_dict = {
             "years": years,
@@ -38,10 +38,6 @@ class PlantedTree(models.Model):
     @property
     def accounts(self):
         return sorted(self.user.accounts.all(), key=lambda account: account.name)
-
-    @property
-    def location(self):
-        return (self.latitude, self.longitude)
 
     def __str__(self):
         return (f"{self.user.__str__()} - {self.tree.name}: {self.planted_at}").strip()
