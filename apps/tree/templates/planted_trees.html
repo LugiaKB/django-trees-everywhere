@@ -9,35 +9,36 @@
         <p>Here is a list of all the trees this user has planted</p>
     {% endif %}
     
-    <ul>
-        {% for planted_tree in planted_trees %}
-            <li>
-                {% if not account_listing %}
-                <a href="{% url 'planted-tree' pk=planted_tree.id %}">
-                {% endif %}
-                    <ul>
-                    {% if account_listing %}
-                        <li>User: {{ planted_tree.user }}</li>
-                        <li><ul> Accounts:
-                            {% for account in planted_tree.accounts %}
-                                <li>
-                                    {{ account }}
-                                </li>
-                            {% endfor %}
-                        </ul>
-                        </li>
+    <div class="planted_trees_list">
+        <ul>
+            {% for planted_tree in planted_trees %}
+                <li>
+                    {% if not account_listing %}
+                    <a href="{% url 'planted-tree' pk=planted_tree.id %}">
                     {% endif %}
-                    <li>{{ planted_tree.tree.name }}</li>
-                    <li>{{ planted_tree.tree.scientific_name }}</li>
-                    <li>{{ planted_tree.planted_at}}</li>
-                    <li>{{ planted_tree.location }}</li>
-                    <li>{{ planted_tree.height }}</li>
-                </ul>
-                {% if not account_listing %}
-                </a>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+                    
+                    <div class="planted_tree_list_item">
+                        <div class="planted_tree_list_item_image">
+                            <img src="{{ planted_tree.tree.image_source }}" alt="{{ planted_tree.tree.name }}" />
+                        </div>
+                        <div class="planted_tree_list_item_info">
+                            <p><strong>Name:</strong> {{ planted_tree.tree.name }}</p>
+                            <p><strong>Planting date:</strong> {{ planted_tree.planted_at }}</p>
+                            {% if account_listing %}
+                            <p><strong>User: </strong>{{ planted_tree.user }}.</p>
+                            <p><strong>Accounts: </strong>
+                            {% for account in planted_tree.accounts %}
+                                {{ account.name }}{% if not forloop.last %},{% endif %}{% endfor %}.
+                            </p>
+                        {% endif %}
+                        </div>
+                    </div>
+                    {% if not account_listing %}
+                    </a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 
 {% endblock %}

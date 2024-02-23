@@ -134,6 +134,14 @@ body {
     height: 400px;
 }
 
+.planted_tree_detail_info {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    padding: 10px;
+}
+
 .login_form {
     max-width: 400px;
     margin: 0 auto;
@@ -157,4 +165,36 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.planted_trees_list > ul > li {
+    list-style: none;
+    margin-bottom: 10px;
+
+}
+
+.planted_tree_list_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #15a01c;
+    border-radius: 15px;
+    color: white;
+    width: 600px
+} 
+
+.planted_tree_list_item_image > img {
+    width: 250px;
+    height: 200px;
+    border-radius: 15px;
+}
+
+.planted_tree_list_item_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 50%;
 }

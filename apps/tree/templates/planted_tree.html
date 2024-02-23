@@ -15,8 +15,7 @@
         <p><strong>Location:</strong> ({{ planted_tree.latitude }}, {{ planted_tree.longitude }})</p>
         <p><strong>Accounts:</strong>
             {% for account in planted_tree.accounts %}
-                {{ account.name }}{% if not forloop.last %},{% endif %}
-            {% endfor %}.
+                {{ account.name }}{% if not forloop.last %},{% endif %}{% endfor %}.
         </p>
 
 
