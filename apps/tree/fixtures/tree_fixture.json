@@ -3,40 +3,45 @@
       "model": "tree.tree",
       "pk": 1,
       "fields": {
-        "name": "Bordo-comum",
-        "scientific_name": "Acer platanoides"
+        "name": "Common Maple",
+        "scientific_name": "Acer platanoides",
+        "image_source": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRN4fv7zyv2FRFIgLC4BQjOFtEv6lsXYM2sPWJN9Hq-Q&s"
       }
     },
     {
       "model": "tree.tree",
       "pk": 2,
       "fields": {
-        "name": "Carvalho-americano",
-        "scientific_name": "Quercus alba"
+        "name": "American Oak",
+        "scientific_name": "Quercus alba",
+        "image_source": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGgza6xyIj-7lNP8xP1BozYJswCXC9dMnwACh9ZWXPpg&s"
       }
     },
     {
       "model": "tree.tree",
       "pk": 3,
       "fields": {
-        "name": "Cedro-vermelho-do-leste",
-        "scientific_name": "Thuja plicata"
+        "name": "Eastern Red Cedar",
+        "scientific_name": "Thuja plicata",
+        "image_source": "https://mybonsai.com.br/blog/wp-content/uploads/2022/03/Acer-campestre1-1.jpg"
       }
     },
     {
       "model": "tree.tree",
       "pk": 4,
       "fields": {
-        "name": "Cerejeira-do-japão",
-        "scientific_name": "Prunus serrulata"
+        "name": "Japanese Cherry Tree",
+        "scientific_name": "Prunus serrulata",
+        "image_source": "https://media.gazetadopovo.com.br/2022/01/13134509/cerejeirapcajapao-an-970x550-960x540.jpg"
       }
     },
     {
       "model": "tree.tree",
       "pk": 5,
       "fields": {
-        "name": "Choupo-branco",
-        "scientific_name": "Populus alba"
+        "name": "White Poplar",
+        "scientific_name": "Populus alba",
+        "image_source": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRN4fv7zyv2FRFIgLC4BQjOFtEv6lsXYM2sPWJN9Hq-Q&s"
       }
     }
   ]
