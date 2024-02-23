@@ -1,4 +1,4 @@
-# django-trees-everywhere
+![image](https://github.com/LugiaKB/django-trees-everywhere/assets/67010253/866adc08-53d7-48bd-b299-49f578d52703)# django-trees-everywhere
 This project was created with Django 5.0.2.
 
 ## Create a virtual environment
@@ -20,4 +20,4 @@ There's a Tree fixture already available. Run ```python manage.py loaddata tree_
 Run ```python manage.py createsuperuser``` to set an super user admin profile for your application. Follow the steps on the terminal and the user will be created.
 
 ## Run the application
-Run ```python manage.py runserver``` and the project will be served on a port of your localhost. Access the ```/admin``` route and login as the superuser you have created. There you will be able to manage the data for your tables and add new users. Access the ```/tree``` route to view the application. Login as one of the users you have created on the admin interface.
+Run ```python manage.py runserver``` and the project will be served on a port of your localhost. Access the ```/admin``` route and login as the superuser you have created. There you will be able to manage the data for your tables and add new users. Access the ```/tree``` route to view the application. Login as one of the users you have created on the admin interface. You can also access ```/tree/api``` to access the api.
