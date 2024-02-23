@@ -22,8 +22,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # external
     "rest_framework",
-    "crispy_forms",
-    "crispy_bootstrap4",
     # internal
     "apps.tree",
 ]
