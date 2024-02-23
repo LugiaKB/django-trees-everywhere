@@ -6,7 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm
 
 
 class LoginView(View):
-    template_name = "../templates/auth/login.html"
+    template_name = "../templates/login.html"
     form_class = AuthenticationForm
 
     def get(self, request):

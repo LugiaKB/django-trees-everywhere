@@ -5,7 +5,7 @@ from django.views import View
 
 
 class HomeView(View):
-    template_name = "../templates/home/home.html"
+    template_name = "../templates/home.html"
 
     @method_decorator(login_required)
     def get(self, request):

@@ -8,7 +8,7 @@ from ..models import Tree
 
 
 class PlantTreeView(View):
-    template_name = "../templates/plant_tree/plant_tree.html"
+    template_name = "../templates/plant_tree.html"
 
     @method_decorator(login_required)
     def get(self, request):

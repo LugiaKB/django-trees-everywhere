@@ -5,7 +5,7 @@ from django.views import View
 
 
 class PlantedTreesView(View):
-    template_name = "../templates/planted_trees/planted_trees.html"
+    template_name = "../templates/planted_trees.html"
 
     @method_decorator(login_required)
     def get(self, request):
