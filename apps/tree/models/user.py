@@ -46,7 +46,7 @@ class User(AbstractUser):
                 latitude=location[0],
                 longitude=location[1],
             )
-            for tree_id, location, account in plants
+            for tree_id, location in plants
         ]
 
         PlantedTree.objects.bulk_create(planted_trees)
