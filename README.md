@@ -2,13 +2,13 @@
 This project was created with Django 5.0.2.
 
 ## Create a virtual environment
-Run ```python3 -m venv``` to create a python virtual environment on your current directory. Run ```source venv/bin/activate``` to activate it. If you're on Windows, run ```source venv/Scripts/activate```.
+Run ```python3 -m venv venv``` to create a python virtual environment on your current directory. Run ```source venv/bin/activate``` to activate it. If you're on Windows, run ```source venv/Scripts/activate```.
 
 ## Install dependencies
 Execute ```pip install -r requirements.txt``` to install all of the project dependencies.
 
 ## Create you environment variable
-Create a file named ```.env``` and fill it as the ```.env.example``` file indicates.
+Create a file named ```.env``` and fill it as the ```.env.example``` file indicates. Create a secret key by running ```python utils/get_secret_key.py```.
 
 ## Run Migrations
 Run ```python manage.py migrate``` to execute all pending migrations. This project is set to work with SQLite by default, so the database will be created automatically on the folder of your project.
