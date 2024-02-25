@@ -22,7 +22,7 @@
                             <img src="{{ planted_tree.tree.image_source }}" alt="{{ planted_tree.tree.name }}" />
                         </div>
                         <div class="planted_tree_list_item_info">
-                            <p><strong>Name:</strong> {{ planted_tree.tree.name }}</p>
+                            <p class="tree_name"><strong>Name:</strong> {{ planted_tree.tree.name }}</p>
                             <p><strong>Planting date:</strong> {{ planted_tree.planted_at }}</p>
                             {% if account_listing %}
                             <p><strong>User: </strong>{{ planted_tree.user }}.</p>

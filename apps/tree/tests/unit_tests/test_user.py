@@ -1,6 +1,6 @@
 import pytest
 
-from ..models import PlantedTree
+from ...models import PlantedTree
 
 
 pytestmark = [pytest.mark.django_db]
